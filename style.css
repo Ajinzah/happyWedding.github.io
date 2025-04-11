@@ -4,10 +4,40 @@
   --shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
 }
 
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
 body {
+  margin: 0;
+  padding: 0;
   font-size: 1.2rem;
   font-family: "Work Sans", sans-serif;
   min-height: 4000px;
+  overflow-x: hidden;
+}
+
+.simply-countdown {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.simply-countdown > .simply-section {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .hero::before {
@@ -134,12 +164,14 @@ body {
   box-shadow: 0 0 5px rbga(0, 0, 0, 0.5);
   position: absolute;
   left: 50%;
-  transform: translateX(-50%) translateY(65px);
+  transform: translateX(-50%) translateY(-25px);
+  z-index: 1;
 }
 
 .home .heart i {
   margin: auto;
   color: var(--pink);
+  font-size: 1.5rem;
 }
 
 .info {
@@ -250,6 +282,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 }
+
 
 .timeline li .timeline-panel {
   width: 40%;
@@ -387,6 +420,18 @@ footer li {
 @media (max-width: 1200px) {
   .home .heart {
     transform: translateX(-50%) translateY(45px);
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .home {
+    padding: 8rem 1rem 5rem 1rem;
+    text-align: center;
+  }
+
+  .home .couple {
+    flex-direction: column;
   }
 }
 
@@ -455,23 +500,49 @@ footer li {
   html {
     font-size: 60%;
   }
-  .simply-countdown > .simply-section {
-    padding: 45px;
-    margin: 3px;
+  .simply-countdown {
+    gap: 15px;
   }
 
+  .simply-countdown > .simply-section {
+    width: 45%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
   .timeline li .timeline-image {
     width: 80px;
     height: 80px;
-  }
+    position: relative;
+    transform: none;
+    margin: 0 auto 20px auto;
+    left: auto;
+}
   .timeline li .timeline-panel {
-    width: 65%;
-    transform: translateX(-20px);
-  }
+   position: relative;
+   border: 1px solid;
+   padding: 15px;
+   border-radius: 10px;
+}
   .timeline li .timeline-panel::before {
-    top: 30px;
+    content: "";
+  position: absolute;
+  left: -15px; /* atau sesuaikan ke kanan jika panah kanan */
+  top: 50%;
+  transform: translateY(-50%);
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid;
   }
   .timeline li .timeline-panel::after {
-    top: 31px;
+    content: "";
+    position: absolute;
+    left: -14px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-top: 9px solid transparent;
+    border-bottom: 9px solid transparent;
+    border-right: 9px solid;
   }
+
+  
 }
