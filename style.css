@@ -18,14 +18,7 @@ body {
   overflow-x: hidden;
 }
 
-.simply-countdown {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-}
-
-.simply-countdown > .simply-section {
+.simply-countdown .simply-section {
   width: 120px;
   height: 120px;
   border-radius: 50%;
@@ -33,13 +26,26 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center;    
+  text-align: center;
   padding: 0;
   margin: 10px;
-  text-align: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
 }
 
+/* Teks di dalam bulatan */
+.simply-section .simply-amount {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 1;
+  display: block;
+}
+
+.simply-section .simply-word {
+  font-size: 14px;
+  margin-top: 4px;
+  display: block;
+}
 .hero::before {
   content: "";
   position: absolute;
@@ -501,13 +507,24 @@ footer li {
     font-size: 60%;
   }
   .simply-countdown {
-    gap: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
   }
 
   .simply-countdown > .simply-section {
-    width: 45%;
-    height: auto;
-    aspect-ratio: 1 / 1;
+    width: 80px;
+    height: 80px;
+    margin: 5px;
+  }
+
+  .simply-section .simply-amount {
+    font-size: 20px;
+  }
+
+  .simply-section .simply-word {
+    font-size: 10px;
   }
   .timeline li .timeline-image {
     width: 80px;
